@@ -7,15 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B72D982C29580F710047B14A /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72D982B29580F710047B14A /* MenuController.swift */; };
+		B72D982E295814F20047B14A /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72D982D295814F20047B14A /* CreatePasswordViewController.swift */; };
+		B72D983529581EFF0047B14A /* PasswordDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72D983429581EFF0047B14A /* PasswordDetailsViewController.swift */; };
+		B75A3B65295AA0500072D09F /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75A3B64295AA0500072D09F /* PasswordValidator.swift */; };
+		B783FD4629583A0E004BEB6C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B783FD4529583A0E004BEB6C /* ProfileViewController.swift */; };
+		B783FD4929584E7F004BEB6C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B783FD4829584E7F004BEB6C /* API.swift */; };
+		B783FD4C29586B9A004BEB6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B783FD4B29586B9A004BEB6C /* Constants.swift */; };
+		B783FD4F29595209004BEB6C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B783FD4E29595209004BEB6C /* Realm */; };
+		B783FD5129595209004BEB6C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B783FD5029595209004BEB6C /* RealmSwift */; };
+		B783FD5429595476004BEB6C /* PasswordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B783FD5229595476004BEB6C /* PasswordTableViewCell.swift */; };
+		B783FD5529595476004BEB6C /* PasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B783FD5329595476004BEB6C /* PasswordTableViewCell.xib */; };
+		B783FD5729595D17004BEB6C /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = B783FD5629595D17004BEB6C /* Password.swift */; };
+		B783FD592959648B004BEB6C /* PasswordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B783FD582959648B004BEB6C /* PasswordDelegate.swift */; };
+		B79897BE2958012D0082EB8D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79897BD2958012D0082EB8D /* HomeViewController.swift */; };
+		B79897C02958014E0082EB8D /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79897BF2958014E0082EB8D /* AnalysisViewController.swift */; };
+		B79897C22958015D0082EB8D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79897C12958015D0082EB8D /* SearchViewController.swift */; };
+		B79897C4295801660082EB8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79897C3295801660082EB8D /* SettingsViewController.swift */; };
+		B79897C6295802C90082EB8D /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79897C5295802C90082EB8D /* APIModels.swift */; };
 		B79EB7812955800A009A091D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79EB7802955800A009A091D /* AppDelegate.swift */; };
 		B79EB7832955800A009A091D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79EB7822955800A009A091D /* SceneDelegate.swift */; };
 		B79EB7852955800A009A091D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79EB7842955800A009A091D /* ViewController.swift */; };
 		B79EB7882955800A009A091D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79EB7862955800A009A091D /* Main.storyboard */; };
 		B79EB78A2955800B009A091D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B79EB7892955800B009A091D /* Assets.xcassets */; };
 		B79EB78D2955800B009A091D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B79EB78B2955800B009A091D /* LaunchScreen.storyboard */; };
+		B7D67CDA295ACA64005AB342 /* AnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D67CD8295ACA64005AB342 /* AnalysisTableViewCell.swift */; };
+		B7D67CDB295ACA64005AB342 /* AnalysisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D67CD9295ACA64005AB342 /* AnalysisTableViewCell.xib */; };
+		B7D67D00295B0573005AB342 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D67CFF295B0573005AB342 /* CircularProgressBarView.swift */; };
+		B7EA88EE295DB80A0002032A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA88ED295DB80A0002032A /* LoginViewController.swift */; };
+		B7EA88F0295DB8140002032A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA88EF295DB8140002032A /* SignUpViewController.swift */; };
+		B7EA88F3295DB9EA0002032A /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = B7EA88F2295DB9EA0002032A /* SwiftKeychainWrapper */; };
+		B7EA88F5295DD27B0002032A /* AuthMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA88F4295DD27B0002032A /* AuthMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B72D982B29580F710047B14A /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		B72D982D295814F20047B14A /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
+		B72D983429581EFF0047B14A /* PasswordDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDetailsViewController.swift; sourceTree = "<group>"; };
+		B75A3B64295AA0500072D09F /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		B783FD4529583A0E004BEB6C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B783FD4829584E7F004BEB6C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B783FD4B29586B9A004BEB6C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B783FD5229595476004BEB6C /* PasswordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTableViewCell.swift; sourceTree = "<group>"; };
+		B783FD5329595476004BEB6C /* PasswordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordTableViewCell.xib; sourceTree = "<group>"; };
+		B783FD5629595D17004BEB6C /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		B783FD582959648B004BEB6C /* PasswordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordDelegate.swift; sourceTree = "<group>"; };
+		B79897BD2958012D0082EB8D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B79897BF2958014E0082EB8D /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		B79897C12958015D0082EB8D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B79897C3295801660082EB8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B79897C5295802C90082EB8D /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
 		B79EB77D2955800A009A091D /* PasswordManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B79EB7802955800A009A091D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B79EB7822955800A009A091D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +65,12 @@
 		B79EB7892955800B009A091D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B79EB78C2955800B009A091D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B79EB78E2955800B009A091D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7D67CD8295ACA64005AB342 /* AnalysisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisTableViewCell.swift; sourceTree = "<group>"; };
+		B7D67CD9295ACA64005AB342 /* AnalysisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisTableViewCell.xib; sourceTree = "<group>"; };
+		B7D67CFF295B0573005AB342 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
+		B7EA88ED295DB80A0002032A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B7EA88EF295DB8140002032A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B7EA88F4295DD27B0002032A /* AuthMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +78,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B783FD5129595209004BEB6C /* RealmSwift in Frameworks */,
+				B783FD4F29595209004BEB6C /* Realm in Frameworks */,
+				B7EA88F3295DB9EA0002032A /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B72D982F29581E2E0047B14A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B79EB7862955800A009A091D /* Main.storyboard */,
+				B7D67CD8295ACA64005AB342 /* AnalysisTableViewCell.swift */,
+				B7D67CD9295ACA64005AB342 /* AnalysisTableViewCell.xib */,
+				B783FD5229595476004BEB6C /* PasswordTableViewCell.swift */,
+				B783FD5329595476004BEB6C /* PasswordTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B72D983029581E3F0047B14A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7EA88EC295DB7F30002032A /* Auth */,
+				B72D983329581EA90047B14A /* tabBar */,
+				B72D982B29580F710047B14A /* MenuController.swift */,
+				B72D983429581EFF0047B14A /* PasswordDetailsViewController.swift */,
+				B72D982D295814F20047B14A /* CreatePasswordViewController.swift */,
+				B783FD4529583A0E004BEB6C /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B72D983129581E4F0047B14A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B79897C5295802C90082EB8D /* APIModels.swift */,
+				B783FD5629595D17004BEB6C /* Password.swift */,
+				B75A3B64295AA0500072D09F /* PasswordValidator.swift */,
+				B783FD582959648B004BEB6C /* PasswordDelegate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B72D983229581E5D0047B14A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B79EB7802955800A009A091D /* AppDelegate.swift */,
+				B79EB7822955800A009A091D /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B72D983329581EA90047B14A /* tabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B79EB7842955800A009A091D /* ViewController.swift */,
+				B79897C12958015D0082EB8D /* SearchViewController.swift */,
+				B79897C3295801660082EB8D /* SettingsViewController.swift */,
+				B79897BF2958014E0082EB8D /* AnalysisViewController.swift */,
+				B79897BD2958012D0082EB8D /* HomeViewController.swift */,
+			);
+			path = tabBar;
+			sourceTree = "<group>";
+		};
+		B783FD4729584E6D004BEB6C /* secrets */ = {
+			isa = PBXGroup;
+			children = (
+				B783FD4829584E7F004BEB6C /* API.swift */,
+			);
+			path = secrets;
+			sourceTree = "<group>";
+		};
 		B79EB7742955800A009A091D = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +171,36 @@
 		B79EB77F2955800A009A091D /* PasswordManager */ = {
 			isa = PBXGroup;
 			children = (
-				B79EB7802955800A009A091D /* AppDelegate.swift */,
-				B79EB7822955800A009A091D /* SceneDelegate.swift */,
-				B79EB7842955800A009A091D /* ViewController.swift */,
-				B79EB7862955800A009A091D /* Main.storyboard */,
+				B783FD4729584E6D004BEB6C /* secrets */,
+				B72D983229581E5D0047B14A /* App */,
+				B72D983129581E4F0047B14A /* Model */,
+				B72D982F29581E2E0047B14A /* View */,
+				B72D983029581E3F0047B14A /* Controller */,
+				B783FD4B29586B9A004BEB6C /* Constants.swift */,
+				B7D67CFE295B0548005AB342 /* Helpers */,
 				B79EB7892955800B009A091D /* Assets.xcassets */,
 				B79EB78B2955800B009A091D /* LaunchScreen.storyboard */,
 				B79EB78E2955800B009A091D /* Info.plist */,
 			);
 			path = PasswordManager;
+			sourceTree = "<group>";
+		};
+		B7D67CFE295B0548005AB342 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B7D67CFF295B0573005AB342 /* CircularProgressBarView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B7EA88EC295DB7F30002032A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B7EA88ED295DB80A0002032A /* LoginViewController.swift */,
+				B7EA88EF295DB8140002032A /* SignUpViewController.swift */,
+				B7EA88F4295DD27B0002032A /* AuthMenuController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +219,11 @@
 			dependencies = (
 			);
 			name = PasswordManager;
+			packageProductDependencies = (
+				B783FD4E29595209004BEB6C /* Realm */,
+				B783FD5029595209004BEB6C /* RealmSwift */,
+				B7EA88F2295DB9EA0002032A /* SwiftKeychainWrapper */,
+			);
 			productName = PasswordManager;
 			productReference = B79EB77D2955800A009A091D /* PasswordManager.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +252,10 @@
 				Base,
 			);
 			mainGroup = B79EB7742955800A009A091D;
+			packageReferences = (
+				B783FD4D29595209004BEB6C /* XCRemoteSwiftPackageReference "realm-swift" */,
+				B7EA88F1295DB9E90002032A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = B79EB77E2955800A009A091D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +270,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7D67CDB295ACA64005AB342 /* AnalysisTableViewCell.xib in Resources */,
+				B783FD5529595476004BEB6C /* PasswordTableViewCell.xib in Resources */,
 				B79EB78D2955800B009A091D /* LaunchScreen.storyboard in Resources */,
 				B79EB78A2955800B009A091D /* Assets.xcassets in Resources */,
 				B79EB7882955800A009A091D /* Main.storyboard in Resources */,
@@ -138,9 +285,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7EA88F0295DB8140002032A /* SignUpViewController.swift in Sources */,
+				B7EA88EE295DB80A0002032A /* LoginViewController.swift in Sources */,
+				B783FD5429595476004BEB6C /* PasswordTableViewCell.swift in Sources */,
+				B79897C22958015D0082EB8D /* SearchViewController.swift in Sources */,
+				B72D982C29580F710047B14A /* MenuController.swift in Sources */,
 				B79EB7852955800A009A091D /* ViewController.swift in Sources */,
+				B79897C4295801660082EB8D /* SettingsViewController.swift in Sources */,
 				B79EB7812955800A009A091D /* AppDelegate.swift in Sources */,
+				B79897C6295802C90082EB8D /* APIModels.swift in Sources */,
+				B75A3B65295AA0500072D09F /* PasswordValidator.swift in Sources */,
+				B783FD4629583A0E004BEB6C /* ProfileViewController.swift in Sources */,
 				B79EB7832955800A009A091D /* SceneDelegate.swift in Sources */,
+				B783FD592959648B004BEB6C /* PasswordDelegate.swift in Sources */,
+				B783FD4929584E7F004BEB6C /* API.swift in Sources */,
+				B72D983529581EFF0047B14A /* PasswordDetailsViewController.swift in Sources */,
+				B79897BE2958012D0082EB8D /* HomeViewController.swift in Sources */,
+				B7D67D00295B0573005AB342 /* CircularProgressBarView.swift in Sources */,
+				B783FD4C29586B9A004BEB6C /* Constants.swift in Sources */,
+				B79897C02958014E0082EB8D /* AnalysisViewController.swift in Sources */,
+				B72D982E295814F20047B14A /* CreatePasswordViewController.swift in Sources */,
+				B7EA88F5295DD27B0002032A /* AuthMenuController.swift in Sources */,
+				B7D67CDA295ACA64005AB342 /* AnalysisTableViewCell.swift in Sources */,
+				B783FD5729595D17004BEB6C /* Password.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +525,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B783FD4D29595209004BEB6C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.33.0;
+			};
+		};
+		B7EA88F1295DB9E90002032A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B783FD4E29595209004BEB6C /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B783FD4D29595209004BEB6C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		B783FD5029595209004BEB6C /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B783FD4D29595209004BEB6C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		B7EA88F2295DB9EA0002032A /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7EA88F1295DB9E90002032A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B79EB7752955800A009A091D /* Project object */;
 }
