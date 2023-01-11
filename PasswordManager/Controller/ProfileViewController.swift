@@ -23,6 +23,12 @@ class ProfileViewController: UIViewController {
         userImage.layer.cornerRadius = 20
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = "Profile"
+        navigationItem.backButtonTitle = "Back"
+    }
+    
    
     @IBAction func logoutTapped(_ sender: Any) {
         let account = "domain.com"

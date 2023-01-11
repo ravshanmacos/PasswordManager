@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bckImage" translatesAutoresizingMaskIntoConstraints="NO" id="CKE-kb-Rx1">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rIx-eZ-GQg" userLabel="FormStack">
                                 <rect key="frame" x="15" y="121" width="360" height="115"/>
                                 <subviews>
@@ -191,9 +194,6 @@
                                     <action selector="manuallyTapped:" destination="BZd-GF-V4N" eventType="touchUpInside" id="EDW-T0-ccv"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bckImage" translatesAutoresizingMaskIntoConstraints="NO" id="CKE-kb-Rx1">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uKh-Z8-BMM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -590,7 +590,7 @@
                         <outlet property="safeSquare" destination="5OP-4U-GxN" id="1Be-rc-GAf"/>
                         <outlet property="tableview" destination="Rog-sd-ESS" id="UTr-IA-2DD"/>
                         <outlet property="wreckSquare" destination="vVG-f0-JLg" id="OXt-Qh-jhr"/>
-                        <segue destination="KBC-6Q-LfG" kind="show" id="RW8-IN-f1e"/>
+                        <segue destination="KBC-6Q-LfG" kind="show" identifier="analysisToDetail" id="RW8-IN-f1e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hU-l2-Qna" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

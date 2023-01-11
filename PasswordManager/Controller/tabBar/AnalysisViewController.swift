@@ -46,6 +46,11 @@ class AnalysisViewController: UIViewController {
         setupPopUpButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.title = "Analysis"
+    }
+    
     private func initUI(){
         safeTitle.textColor = UIColor(named: "darkGreen")
         weakTitle.textColor = UIColor(named:"darkBlue")

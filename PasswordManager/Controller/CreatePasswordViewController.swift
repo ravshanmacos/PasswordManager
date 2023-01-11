@@ -41,7 +41,8 @@ class CreatePasswordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.navigationItem.title = "New Record"
+        navigationItem.title = "Create New"
+        navigationItem.backButtonTitle = "Back"
     }
     
     @IBAction func lengthSliderDidChange(_ sender: UISlider) {

@@ -1,3 +1,7 @@
+## Auth
+
+<img src = "https://github.com/ravshanmacos/PasswordManager/blob/main/PasswordManager/Resources/Auth.png" width = "400" />
+
 ## Main
 
 <img src = "https://github.com/ravshanmacos/PasswordManager/blob/main/PasswordManager/Resources/Main.png" width = "600" />

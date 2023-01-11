@@ -21,6 +21,7 @@ class PasswordDetailsViewController: UIViewController {
     private let doneButton = UIButton()
     var selectedPassword:Password?
     var currentIndexPath:IndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +30,12 @@ class PasswordDetailsViewController: UIViewController {
         userID.text = selectedPassword?.userID
         userIDField.text = selectedPassword?.userID
         password.text = selectedPassword?.password
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = "Password Details"
+        navigationItem.backButtonTitle = "Back"
     }
     
     @IBAction func deleteTapped(_ sender: Any) {
