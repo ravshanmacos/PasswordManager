@@ -48,14 +48,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let users = realm.objects(User.self)
             let account = "domain.com"
             let service = "token"
-            let result = KeychainHelper.standard.genericRead(service: service, account: account, type: UserData.self)
             
             if users.contains(where: { user in
                 user.username == username && user.password == password
             }){
-                let user = users.where { query in
-                    query.username == username
-                }
                 let userData = UserData(username: username, password: password)
                 KeychainHelper.standard.genericSave(userData, service: service, account: account)
                 performSegue(withIdentifier: "loginToMenu", sender: self)
