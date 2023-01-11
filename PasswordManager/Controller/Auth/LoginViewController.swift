@@ -117,7 +117,6 @@ extension LoginViewController{
         FormUI.location(view: createAccountButton, relative: orLabel, side: .top, margin: 20, isInside: false)
         FormUI.locateInCenter(view: createAccountButton, relative: blurEffectView, direction: .horizontal)
         FormUI.changeSize(view: createAccountButton, sizeType: .width, size: 300)
-        FormUI.changeSize(view: createAccountButton, sizeType: .height, size: 40)
     }
     
 }
