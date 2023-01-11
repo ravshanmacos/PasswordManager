@@ -22,6 +22,9 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        tableview.backgroundView = UIImageView(image: UIImage(named: "bckImage"))
+        
         tableview.delegate = self
         tableview.dataSource = self
         searchView.delegate = self

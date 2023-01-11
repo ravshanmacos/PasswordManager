@@ -6,20 +6,24 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MenuController: UITabBarController {
-
+    let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
+    @IBAction func profileTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ProfileViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     @IBAction func addTapped(_ sender: Any) {
         performSegue(withIdentifier: Constants.SeguesDirection.add, sender: self)
     }
     
 }
-
-

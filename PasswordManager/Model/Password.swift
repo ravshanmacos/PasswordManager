@@ -15,4 +15,5 @@ final class Password:Object, ObjectKeyIdentifiable{
     @Persisted var password:String = ""
     @Persisted var validityType:String = "weak"
     @Persisted var validityValue:Bool = true
+    @Persisted(originProperty: "passwords") var user:LinkingObjects<User>
 }

@@ -12,14 +12,15 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
     private let realm = try! Realm()
-    private var passwords:Results<Password>?
+    private var passwords:List<Password>?
     private var selectedPassword:Password?
     private var currentIndexPath:IndexPath?
     var notificationToken: NotificationToken?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let imageView = UIImageView(image: UIImage(named: "bckImage"))
+        tableview.backgroundView = imageView
         tableview.dataSource = self
         tableview.delegate = self
         
@@ -35,7 +36,15 @@ class HomeViewController: UIViewController {
     }
     
     func loadPasswords(){
-        passwords = realm.objects(Password.self)
+        let users = realm.objects(User.self)
+        let account = "domain.com"
+        let service = "token"
+        let result = KeychainHelper.standard.genericRead(service: service, account: account, type: UserData.self)
+        for user in users{
+            if user.username == result?.username{
+                passwords = user.passwords
+            }
+        }
         tableview.reloadData()
     }
     

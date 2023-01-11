@@ -12,48 +12,62 @@ class AnalysisViewController: UIViewController {
 
   
     @IBOutlet weak var circularViewContainer: UIView!
-    @IBOutlet weak var animatedCountingLabel: UILabel!
     @IBOutlet weak var safeSquare: UIView!
     @IBOutlet weak var wreckSquare: UIView!
     @IBOutlet weak var riskSquare: UIView!
     @IBOutlet weak var tableview: UITableView!
-    @IBOutlet weak var safeSquareLabel: UILabel!
-    @IBOutlet weak var wreckSquareLabel: UILabel!
-    @IBOutlet weak var riskSquareLabel: UILabel!
     @IBOutlet weak var filterButton: UIButton!
-    
+    private let animatedCountingLabel = FormUI.createLabel(title: "", fontSize: 14)
+    private let safeCounterLabel = FormUI.createLabel(title: "", fontSize: 16)
+    private let safeTitle = FormUI.createLabel(title: "safe", fontSize: 14)
+    private let weakCounterLabel = FormUI.createLabel(title: "", fontSize: 16)
+    private let weakTitle = FormUI.createLabel(title: "weak", fontSize: 14)
+    private let riskCounterLabel = FormUI.createLabel(title: "", fontSize: 16)
+    private let riskTitle = FormUI.createLabel(title: "risk", fontSize: 14)
     
     private let realm = try! Realm()
-    private var passwords: Results<Password>?
+    private var passwords: [Password] = []
     var notificationToken: NotificationToken?
     private var percentage:Float?
     private var selectedPassword:Password?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         tableview.dataSource = self
         tableview.delegate = self
         
         tableview.register(UINib(nibName: "AnalysisTableViewCell", bundle: nil), forCellReuseIdentifier: Constants.Cells.analysisCustomCell)
         
-        initSquares(square: safeSquare, borderColor: UIColor.systemBlue.cgColor)
-        initSquares(square: wreckSquare, borderColor: UIColor.systemYellow.cgColor)
-        initSquares(square: riskSquare, borderColor: UIColor.systemRed.cgColor)
+        initUI()
         loadPasswords()
         watchChanges()
         initCircularProgress()
         setupPopUpButton()
     }
     
+    private func initUI(){
+        safeTitle.textColor = UIColor(named: "darkGreen")
+        weakTitle.textColor = UIColor(named:"darkBlue")
+        riskTitle.textColor = UIColor(named: "darkRed")
+        initSquares(square: safeSquare, counter: safeCounterLabel, title: safeTitle)
+        initSquares(square: wreckSquare, counter: weakCounterLabel, title: weakTitle)
+        initSquares(square: riskSquare, counter: riskCounterLabel, title: riskTitle)
+    }
+    
     private func initCircularProgress(){
         let progressView = CircularProgressView(frame: CGRect(x: 0, y: 0, width: 90, height: 90), lineWidth: 5, rounded: false)
-        progressView.progressColor = .systemBlue
+        progressView.progressColor = UIColor(named: "darkBlue")!
         progressView.trackColor = .lightGray
         progressView.center = CGPoint(x: circularViewContainer.frame.width/2, y: circularViewContainer.frame.height/2)
-        circularViewContainer.addSubview(progressView)
+        let blurEffectView = FormUI.createBlurBackground(with: circularViewContainer,isAdded: false,blurStyle: .light)
+        blurEffectView.layer.cornerRadius = 20
+        blurEffectView.clipsToBounds = true
+        blurEffectView.contentView.addSubview(progressView)
+        blurEffectView.contentView.addSubview(animatedCountingLabel)
+        circularViewContainer.addSubview(blurEffectView)
+        FormUI.locateInCenter(view: animatedCountingLabel, relative: blurEffectView, direction: .horizontal)
+        FormUI.locateInCenter(view: animatedCountingLabel, relative: blurEffectView, direction: .vertical)
         progressView.progress = percentage! / 100
         incrementLabel(to: Int(percentage!))
     }
@@ -71,32 +85,51 @@ class AnalysisViewController: UIViewController {
         }
     }
     
-    private func initSquares(square:UIView, borderColor:CGColor){
-        square.layer.borderWidth = 2
-        square.layer.borderColor = borderColor
+    private func initSquares(square:UIView, counter:UILabel, title:UILabel){
+        let vstack = FormUI.createVStack(spacing: 5)
+        counter.textAlignment = .center
+        title.textAlignment = .center
+        let blurEffectView = FormUI.createBlurBackground(with: square,isAdded: false)
         square.layer.cornerRadius = 20
+        blurEffectView.layer.cornerRadius = 20
+        blurEffectView.clipsToBounds = true
+        vstack.addArrangedSubview(counter)
+        vstack.addArrangedSubview(title)
+        blurEffectView.contentView.addSubview(vstack)
+        square.addSubview(blurEffectView)
+        FormUI.locateInCenter(view: vstack, relative: blurEffectView, direction: .horizontal)
+        FormUI.locateInCenter(view: vstack, relative: blurEffectView, direction: .vertical)
     }
     
     func setupPopUpButton() {
-        let data = realm.objects(Password.self)
+        let users = realm.objects(User.self)
+        var data:[Password] = []
+        let account = "domain.com"
+        let service = "token"
+        let result = KeychainHelper.standard.genericRead(service: service, account: account, type: UserData.self)
+        for user in users{
+            if user.username == result?.username{
+                data = Array(user.passwords)
+            }
+        }
         let popUpButtonClosure = { [self] (action: UIAction) in
-            
             if action.title == "Strong"{
-                passwords = data.where({ queryPassword in
-                    queryPassword.validityType == "strong"
+                passwords = data.filter({ password in
+                    password.validityType == "strong"
                 })
             }else if action.title == "Weak"{
-                passwords = data.where({ queryPassword in
-                    queryPassword.validityType == "weak"
+           
+                passwords = data.filter({ password in
+                    password.validityType == "weak"
                 })
             } else if action.title == "Risk"{
-                passwords = data.where({ queryPassword in
-                    queryPassword.validityType == "risk"
+              
+                passwords = data.filter({ password in
+                    password.validityType == "risk"
                 })
             }else{
-                passwords = data
+               passwords = data
             }
-            
             DispatchQueue.main.async {
                 self.tableview.reloadData()
             }
@@ -114,13 +147,21 @@ class AnalysisViewController: UIViewController {
    
   //  line.3.horizontal.decrease
     func loadPasswords(){
-        passwords = realm.objects(Password.self)
+        let users = realm.objects(User.self)
+        let account = "domain.com"
+        let service = "token"
+        let result = KeychainHelper.standard.genericRead(service: service, account: account, type: UserData.self)
+        for user in users{
+            if user.username == result?.username{
+                passwords = Array(user.passwords)
+            }
+        }
         tableview.reloadData()
         var strongPasswords:Float = 0
         var weakPasswords:Float = 0
         var riskPasswords:Float = 0
         
-        for password in passwords!{
+        for password in passwords{
             
             if password.validityType == "strong"{
                 strongPasswords += 1
@@ -133,27 +174,36 @@ class AnalysisViewController: UIViewController {
         
         
         
-        let strongPasswordsInProcent = Int(strongPasswords / Float(passwords!.count) * 100)
-        let weakPasswordsInProcent = Int(weakPasswords / Float(passwords!.count) * 100)
-        let riskPasswordsInProcent = Int(riskPasswords / Float(passwords!.count) * 100)
+        let strongPasswordsInProcent = Int(strongPasswords / Float(passwords.count) * 100)
+        let weakPasswordsInProcent = Int(weakPasswords / Float(passwords.count) * 100)
+        let riskPasswordsInProcent = Int(riskPasswords / Float(passwords.count) * 100)
         
         percentage = Float(strongPasswordsInProcent)
         
-        safeSquareLabel.text = String(strongPasswordsInProcent)
-        wreckSquareLabel.text = String(weakPasswordsInProcent)
-        riskSquareLabel.text = String(riskPasswordsInProcent)
+        safeCounterLabel.text = String(strongPasswordsInProcent)
+        weakCounterLabel.text = String(weakPasswordsInProcent)
+        riskCounterLabel.text = String(riskPasswordsInProcent)
         
     }
     
     func watchChanges(){
+        let users = realm.objects(User.self)
+        let account = "domain.com"
+        let service = "token"
+        let result = KeychainHelper.standard.genericRead(service: service, account: account, type: UserData.self)
+       let user = users.where { query in
+           query.username == result!.username
+        }
         // Retain notificationToken as long as you want to observe
-        notificationToken = passwords!.observe { [self] (changes) in
+        notificationToken = user.observe { [self] (changes) in
             switch changes {
             case .initial: break
                 // Results are now populated and can be accessed without blocking the UI
             case .update(_, _, _, _):
                 // Query results have changed.
+                loadPasswords()
                 tableview.reloadData()
+                initCircularProgress()
             case .error(let error):
                 // An error occurred while opening the Realm file on the background worker thread
                 fatalError("\(error)")
@@ -167,14 +217,14 @@ class AnalysisViewController: UIViewController {
 
 extension AnalysisViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return passwords?.count ?? 0
+        return passwords.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.analysisCustomCell, for: indexPath)
         as! AnalysisTableViewCell
         
-        let password = passwords![indexPath.row]
+        let password = passwords[indexPath.row]
         cell.setData(password: password)
         cell.selectionStyle = .none
         
@@ -187,7 +237,7 @@ extension AnalysisViewController:UITableViewDataSource{
 
 extension AnalysisViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedPassword = passwords![indexPath.row]
+        selectedPassword = passwords[indexPath.row]
         tableview.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: Constants.SeguesDirection.analysisToDetail, sender: self)
     }

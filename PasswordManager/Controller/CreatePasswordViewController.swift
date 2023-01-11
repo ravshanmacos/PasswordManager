@@ -137,13 +137,24 @@ class CreatePasswordViewController: UIViewController {
     }
     
     private func save(password:Password){
-        do {
-            try realm.write{
-                realm.add(password)
+        let users = realm.objects(User.self)
+        let account = "domain.com"
+        let service = "token"
+        let result = KeychainHelper.standard.genericRead(service: service, account: account, type: UserData.self)
+        
+        for user in users{
+            if user.username == result?.username{
+                do {
+                    try realm.write{
+                        user.passwords.append(password)
+                    }
+                } catch {
+                    print("Error saving category \(error)")
+                }
             }
-        } catch {
-            print("Error saving category \(error)")
         }
+        
+        
     }
     
     
