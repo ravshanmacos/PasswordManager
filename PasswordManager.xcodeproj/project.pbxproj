@@ -43,7 +43,6 @@
 		B7DDEE23296D8EC000D17AA3 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7DDEE21296D8EC000D17AA3 /* CustomCell.xib */; };
 		B7EA88EE295DB80A0002032A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA88ED295DB80A0002032A /* LoginViewController.swift */; };
 		B7EA88F0295DB8140002032A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA88EF295DB8140002032A /* SignUpViewController.swift */; };
-		B7EA88F3295DB9EA0002032A /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = B7EA88F2295DB9EA0002032A /* SwiftKeychainWrapper */; };
 		B7EA88F5295DD27B0002032A /* AuthMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA88F4295DD27B0002032A /* AuthMenuController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +93,6 @@
 				B783FD5129595209004BEB6C /* RealmSwift in Frameworks */,
 				B750CFB3296B087E00A113A4 /* CryptoSwift in Frameworks */,
 				B783FD4F29595209004BEB6C /* Realm in Frameworks */,
-				B7EA88F3295DB9EA0002032A /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +248,6 @@
 			packageProductDependencies = (
 				B783FD4E29595209004BEB6C /* Realm */,
 				B783FD5029595209004BEB6C /* RealmSwift */,
-				B7EA88F2295DB9EA0002032A /* SwiftKeychainWrapper */,
 				B750CFB2296B087E00A113A4 /* CryptoSwift */,
 			);
 			productName = PasswordManager;
@@ -283,7 +280,6 @@
 			mainGroup = B79EB7742955800A009A091D;
 			packageReferences = (
 				B783FD4D29595209004BEB6C /* XCRemoteSwiftPackageReference "realm-swift" */,
-				B7EA88F1295DB9E90002032A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				B750CFB1296B087E00A113A4 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
 			);
 			productRefGroup = B79EB77E2955800A009A091D /* Products */;
@@ -579,14 +575,6 @@
 				minimumVersion = 10.33.0;
 			};
 		};
-		B7EA88F1295DB9E90002032A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -604,11 +592,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B783FD4D29595209004BEB6C /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		B7EA88F2295DB9EA0002032A /* SwiftKeychainWrapper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B7EA88F1295DB9E90002032A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
-			productName = SwiftKeychainWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
