@@ -1,4 +1,4 @@
-#Description
+# Description
 Password manager app is created for those who want to place, organize their credentials and make STRONG passwords. I know a lot of people who create new account every week and use same passwords again and again. This issue is not unfamiliar for me also. All tech people knows that using same credential again and again is very bad experience because These people are an easy target for hackers. Unfortunately, password manager apps out there are not free. So the Main reason creating this app is making app which keeps all strong password in one place and free to use 
 
 ## Auth
