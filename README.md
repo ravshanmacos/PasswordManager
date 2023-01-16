@@ -17,11 +17,13 @@ In the Home view Controller, I used tableview to show the data retrieved from da
 ## Analysis and Search
 
 In the Analysis view controller, as name says some analysis will be shown. 
+This section of App categorize passwords according "Strong", "Weak" and "Risk".
 
 <img src = "https://github.com/ravshanmacos/PasswordManager/blob/main/PasswordManager/Resources/AnalysisAndSearch.png" width = "400" />
 
 
 ## Settings and User profile
+
 
 <img src = "https://github.com/ravshanmacos/PasswordManager/blob/main/PasswordManager/Resources/SettingsAndProfile.png" width = "400" />
 
